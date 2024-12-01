@@ -524,6 +524,71 @@ img {
         background-color: #31d0aa;
 }
 
+.footer-form-block {
+        display: flex;
+        margin-left: 80px;
+        flex-direction: column;
+}
+
+.footer-form-title {
+        color: rgb(255, 255, 255);
+        font-family: Roboto;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0.02em;
+        text-align: left;
+        margin-bottom: 16px;
+}
+
+.footer-form{
+        display: flex;
+        max-height: 40px;
+}
+
+.footer-form-input {
+        color: rgb(255, 255, 255);
+        font-family: Roboto;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0.04em;
+        text-align: left;
+        border: 1px solid rgb(255, 255, 255);
+        border-radius: 4px;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+        background-color: #2e2f42;
+        padding-left: 16px;
+        width: 264px;
+        height: 40px;
+        margin-right: 24px;
+}
+
+.footer-form-button {
+        display: flex;
+        border-radius: 4px;
+        background-color: rgb(77, 90, 229);
+        color: rgb(255, 255, 255);
+        font-family: Roboto;
+        font-size: 16px;
+        font-weight: 500;
+        font-family: "Roboto",sans-serif;
+        line-height: 1.5;
+        letter-spacing: 0.04em;
+        text-align: center;
+        padding: 8px 24px;
+        min-width: 165px;
+        height: 40px;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        margin-left: 16px;
+        cursor: pointer
+}
+
+.footer-form-button-icon{
+        fill:#FFFFFF
+}
 /* #endregion*/
 /* #region Logo*/
 .logo {
@@ -549,10 +614,11 @@ img {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(46,47,66,0.4);
         opacity: 0;
         pointer-events: none;
-        transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-overlay.is-open {
@@ -561,12 +627,53 @@ img {
 }
 
 .modal {
-        height: 584px;
+        position: absolute;
+        top:50%;
+        left: 50%;
+        min-height: 584px;
         width:408px;
         background-color: #FCFCFC;
         display: flex;
         flex-direction: column;
-        padding: 24px;
+        padding: 72px 24px 24px;
+        transform: translate(-50%, -50%);
+        border-radius: 4px;
+        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14),
+                0px 1px 3px rgba(0, 0, 0, 0.12),
+                0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.form-close-button {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        border: 1px solid #0000001a;
+        background-color: #e7e9fc;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+                    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        padding: 0;
+        cursor: pointer;
+        margin-left: auto;
+        margin-bottom: 24px;
+
+}
+
+.form-close-button:hover,
+.form-close-button:focus .modal-close-button-icon {
+        fill: #ffffff;
+}
+
+.form-close-button:hover,
+.form-close-button:focus {
+        background-color: #4d5ae5;
+        border: none;
 }
 
 .form-title{
@@ -582,7 +689,7 @@ img {
         display: flex;
         align-items: center;
         justify-content: center;
-
+        margin-bottom: 16px;
 }
 
 .form{
@@ -594,70 +701,43 @@ img {
         gap: 8px;
 }
 
-.form-label{
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-        color: rgb(142, 143, 153);
-        font-family: Roboto;
-        font-size: 12px;
-        font-weight: 400;
-        line-height: 14px;
-        letter-spacing: 0.04em;
-        border: none;
+.form-wrap-content{
+        position: relative;
 }
 
 .form-input-wrap{
         position: relative;
+        margin-bottom: 8px;
+        width: 100%;
 }
 
-.modal-close-button{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 24px;
-        height: 24px;
-        border-radius: 50%;
-        border: 1px solid #0000001a;
-        background-color: #e7e9fc;
-        transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        padding: 0;
-        cursor: pointer;
-        margin-left: auto;
-        margin-bottom: 24px;
+.form-label {
+        display: block;
+        margin-bottom: 4px;
+        color: rgb(142, 143, 153);
+        font-family: Roboto;
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: 0.04em;
+        border: none;
+        line-height: 1.17;
 }
 
 .form-input{
-        width: 360px;
+        width: 100%;
         height: 40px;
         box-sizing: border-box;
-        border: 1px solid #2e2f4266;
+        border: 1px solid rgba(46, 47, 66, 0.4);
         border-radius: 4px;
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 11px 0 11px 38.63px;
-       
+        background-color: transparent;
+        outline: transparent;
+        padding-left: 38px;
+        transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-input:focus,
-.form-input:active {
-        border-color: #4d5ae5;
-        outline: none;
-} 
-
-.form-input:focus+.modal-input-icon {
-        fill: #4d5ae5;
-}
-
-.modal-close-button:hover
-.modal-close-button-icon {
-        fill: rgb(255, 255, 255);
-}
-
-.modal-close-button:hover{
-        background-color: #4d5ae5;
-}
 
 .form-input-icon{
         position: absolute;
@@ -666,12 +746,41 @@ img {
         pointer-events: none;
         padding: 3px;
         color: rgb(46, 47, 66);
+        transform: translateY(-50%);
+        transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-input:focus,
+.form-input:active{
+        border-color: #4d5ae5;
+} 
+
+.form-input:focus+.form-input-icon{
+        fill: #4d5ae5;
+}
+.form-input-comment{
+        margin-bottom: 16px;
+        width: 100%;
 }
 
 .form-text-area{
-        min-height: 120px;
+        width: 100%;
+        height: 120px;
+        font-size: 12px;
         padding: 8px 16px;
         resize:none;
+        line-height: 1.17;
+        letter-spacing: 0.04em;
+        color: rgba(46, 47, 66, 0.4);
+        border: 1px solid rgba(46, 47, 66, 0.4);
+        border-radius: 4px;
+        background-color: transparent;
+        outline: transparent;
+        transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-text-area:focus{
+        border-color: #4D5AE5;
 }
 
 .privacy-pocibility-check{
@@ -688,15 +797,15 @@ img {
     color:rgb(77, 90, 229);
 }
 
+.form-agreement{
+        margin-bottom: 24px;
+}
+
 .form-checkbox-label {
         font-size: 12px;
-        font-weight: 400;
         line-height: 1.17;
         letter-spacing: 0.04em;
         color: #8e8f99;
-        display: flex;
-        gap: 8px;
-        margin-top: 16px;
 }
 
 .form-checkbox {
@@ -708,7 +817,6 @@ img {
         margin-right: 8px;
         border: 1px solid #2e2f4266;
         border-radius: 2px;
-        cursor: pointer;
         transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
                     border 250ms cubic-bezier(0.4, 0, 0.2, 1),
                     fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -735,6 +843,7 @@ input[type="checkbox"]:checked+.form-checkbox-label>.form-checkbox {
 .form-send-button {
         font-size: 16px;
         font-weight: 500;
+        font-family: "Roboto";
         line-height: 1.5;
         letter-spacing: 0.04em;
         text-align: center;
@@ -748,10 +857,7 @@ input[type="checkbox"]:checked+.form-checkbox-label>.form-checkbox {
         border-radius: 4px;
         cursor: pointer;
         border: none;
-        display: flex;
-        margin: 0 auto;
-        justify-content: center;
-        align-items: center;
+        display: block;
         margin-top: 24px;
 }
 
