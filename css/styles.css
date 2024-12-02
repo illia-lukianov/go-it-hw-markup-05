@@ -669,7 +669,7 @@ img {
 }
 
 .form-close-button:hover,
-.form-close-button:focus .modal-close-button-icon {
+.form-close-button:focus .form-close-button-icon {
         fill: #ffffff;
 }
 
